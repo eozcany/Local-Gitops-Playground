@@ -1,6 +1,18 @@
 # Local GitOps Playground
 
-Run the full demo with a single command:
+## Pre-Requesites
+
+Before running the playground, make sure the following tools are installed locally:
+
+- [Minikube](https://minikube.sigs.k8s.io/docs/start/)  
+- [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)  
+- [Terraform](https://developer.hashicorp.com/terraform/downloads)  
+- [Helm](https://helm.sh/docs/intro/install/)  
+- [Docker](https://docs.docker.com/get-docker/) 
+
+## Installation
+
+Run the full playground with a single command:
 
 ```bash
 ./run.sh
