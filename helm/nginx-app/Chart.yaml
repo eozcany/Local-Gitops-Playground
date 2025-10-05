@@ -1,0 +1,6 @@
+apiVersion: v2
+name: nginx-app
+description: Simple Nginx application deployed via ArgoCD for staging and prod
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  nginx-app:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-10-05T21:26:35.557528+03:00"
+    description: Simple Nginx application deployed via ArgoCD for staging and prod
+    digest: cc02c75631e36c25ddb6436cb067f6a0a4c15c47e840e0ae5d10662e3af5c96a
+    name: nginx-app
+    type: application
+    urls:
+    - nginx-app-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-10-05T21:26:35.557069+03:00"

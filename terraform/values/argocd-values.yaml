@@ -1,0 +1,35 @@
+configs:
+  cm:
+    application.resourceTrackingMethod: annotation
+    repositories: |
+      - type: helm
+        name: local-helm
+        url: http://helm-repo.helm-repo.svc.cluster.local
+        insecure: true
+    resource.customizations: |
+      networking.k8s.io/Ingress:
+        health.lua: |
+          hs = {}
+          hs.status = "Healthy"
+          hs.message = "Ingress readiness ignored for local demo"
+          return hs
+  params:
+    server.insecure: true
+
+server:
+  service:
+    type: ClusterIP
+  ingress:
+    enabled: false
+
+controller:
+  metrics:
+    enabled: true
+
+repoServer:
+  metrics:
+    enabled: true
+
+redis:
+  metrics:
+    enabled: true

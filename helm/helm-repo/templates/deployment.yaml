@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.config.deploymentName }}
+  labels:
+    app: {{ .Values.config.deploymentName }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.config.deploymentName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.config.deploymentName }}
+    spec:
+      containers:
+        - name: nginx
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 80
+              name: http
+          volumeMounts:
+            - name: chart-content
+              mountPath: /usr/share/nginx/html
+      volumes:
+        - name: chart-content
+          configMap:
+            name: {{ .Values.config.chartConfigMapName }}

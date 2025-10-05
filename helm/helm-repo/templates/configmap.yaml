@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.config.chartConfigMapName }}
+data:
+  {{ .Values.config.indexFile }}: |-
+{{ (.Files.Get (printf "files/%s" .Values.config.indexFile)) | indent 4 }}
+binaryData:
+  {{ .Values.config.chartFile }}: {{ (.Files.Get (printf "files/%s" .Values.config.chartFile) | b64enc) }}

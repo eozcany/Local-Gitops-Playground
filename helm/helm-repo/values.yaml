@@ -1,0 +1,22 @@
+image:
+  repository: nginx
+  tag: 1.25-alpine
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+config:
+  indexFile: index.yaml
+  chartFile: nginx-app-0.1.0.tgz
+  chartConfigMapName: helm-repo-content
+  deploymentName: helm-repo
