@@ -72,5 +72,5 @@ Next steps:
        ./scripts/promote.sh -e prod
        # or ./scripts/promote.sh -e prod --tag $TAG
   3. If needed, roll back:
-       ./scripts/rollback.sh -e prod --tag <previous-tag>
+       ./scripts//promote.sh -e prod --tag <previous-tag>
 SUMMARY
